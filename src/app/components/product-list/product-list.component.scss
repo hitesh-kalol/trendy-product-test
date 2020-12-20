@@ -1,0 +1,166 @@
+.grid {
+    .item {
+        .box {
+            margin: 0.5rem 0rem;
+            padding: 0rem 0.5rem;
+            border-radius: 0.5rem;
+            background-color: #fff;
+            .item-img {
+                width: 100%;
+                height: 200px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-top-left-radius: 0.5rem;
+                border-top-right-radius: 0.5rem;
+            }
+            .caption {
+                padding: 10px;
+                font-weight: bold;
+                border-bottom: 1px solid #ddd;
+                div {
+                    display: inline-block;
+                }
+            }
+            .price {
+                font-weight: bold;
+            }
+            .tags {
+                color: #ccc;
+                padding: 5px;
+                text-align: left;
+                div {
+                    display: inline-block;
+                    padding: 2px;
+                    span {
+                        padding: 0px 3px;
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.list {
+    .item {
+        margin: 5px 0px;
+        .box {
+            border-radius: 0.5rem;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            background-color: #fff;
+            .item-img {
+                width: 100%;
+                height: 100px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 0.5rem;
+            }
+            .caption {
+                padding: 10px;
+                .title {
+                    display: inline-block;
+                    font-weight: bold;
+                }
+                .capsule {
+                    border-radius: 10px;
+                    display: inline-block;
+                    padding: 3px 10px;
+                    font-size: 12px;
+                    margin: 5px;
+                }
+            }
+            .actions {
+                font-size: 20px;
+                text-align: center;
+                color: #d4d4dc;
+                padding: 5px;
+                div {
+                    display: inline-block;
+                    padding: 3px;
+                    cursor: pointer;
+                    span {
+                        padding: 0px 3px;
+                        display: inline-block;
+                    }
+                }
+            }
+            .price {
+                font-size: 24px;
+                color: #35c573;
+                font-weight: bold;
+            }
+            .tags {
+                color: #d4d4dc;
+                padding: 10px 5px;
+                font-size: 20px;
+                font-weight: 400;
+                div {
+                    display: inline-block;
+                    padding: 3px;
+                    span {
+                        padding: 0px 3px;
+                        display: inline-block;
+                    }
+                }
+            }
+            .index {
+                font-size: 24px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.action-bar {
+    div {
+        padding: 10px;
+        cursor: pointer;
+    }
+    .selected {
+        background-color: #fff;
+        border-radius: 5px;
+    }
+}
+
+.mar-b-5 {
+    margin-bottom: 5px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.bg-gray {
+    background-color: #f6f6f6;
+    color: #d4d4dc;
+}
+
+.bg-primary {
+    background-color: aqua;
+    color: #fff;
+}
+
+.bg-success {
+    background-color: #d6fafa;
+    color: #47bad0;
+}
+
+.bg-warn {
+    background-color: #f6f3d8;
+    color: #e0cd2c;
+}
+
+.bg-danger {
+    background-color: #f8dedf;
+    color: #ee3135;
+}
+
+.bg-info {
+    background-color: rgb(243, 228, 251);
+    color: #834dc2;
+}

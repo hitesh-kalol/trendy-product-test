@@ -1,0 +1,151 @@
+<div class="wrapper">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>
+                Product List
+            </h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="action-bar col-xs-12">
+            <div class="pull-right" [ngClass]="{'selected': currentLayout== 'grid'}" (click)="toggleLayout('grid')">
+                <i class="fa fa-th-large"></i>
+            </div>
+            <div class="pull-right" [ngClass]="{'selected': currentLayout== 'list'}" (click)="toggleLayout('list')">
+                <i class="fa fa-list"></i>
+            </div>
+        </div>
+    </div>
+    <ng-container *ngIf="(products); else noItems">
+        <div class="row list" *ngIf="currentLayout=='list'">
+            <div class="item col-md-12" *ngFor="let p of products">
+                <div class="row">
+                    <div class="col-sm-2 col-xs-6 mar-b-5">
+                        <div class="box">
+                            <div class="index">{{p.productId}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 col-xs-6 mar-b-5">
+                        <div class="box">
+                            <div class="item-img" [ngStyle]="{'background-image': 'url(' + p.imagePath + ')'}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 col-xs-12 mar-b-5">
+                        <div class="box">
+                            <div class="row middle-xs full-width">
+                                <div class="col-xs-12 col-md-8">
+                                    <div class="caption">
+                                        <div class="title">{{p.title}}</div>
+                                        <div class="pull-right capsule bg-success">
+                                            <i class="fa fa-cog"></i>
+                                        </div>
+                                        <div class="pull-right capsule bg-danger">
+                                            <i class="fa fa-cloud-download"></i>
+                                        </div>
+                                        <div class="pull-right capsule bg-warn">
+                                            <i class="fa fa-eye-slash"></i>
+                                        </div>
+                                        <div class="pull-right capsule bg-info">
+                                            <span>Dropship</span>
+                                        </div>
+                                        <div class="pull-right capsule bg-gray">
+                                            <span>2 Days Ago</span>
+                                        </div>
+                                        <div class="pull-right capsule bg-primary">
+                                            <i class="fa fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="tags">
+                                        <!-- <div>
+                                        <i class="fa fa-trophy"></i>
+                                        <span>{{p.percentage}}</span>
+                                    </div> -->
+                                        <div>
+                                            <i class="icon-pin"></i>
+                                            <span>{{p.tags}}</span>
+                                        </div>
+                                        <div>
+                                            <i class="icon-star"></i>
+                                            <span>{{p.rating}}</span>
+                                        </div>
+                                        <div>
+                                            <i class="icon-shield"></i>
+                                            <span>{{p.percentage}}%</span>
+                                        </div>
+                                        <div>
+                                            <i class="icon-epack"></i>
+                                            <span>{{p.ePacket ? 'ePack': 'None'}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-1">
+                                    <div class="price">{{p.price |currency}}</div>
+                                </div>
+                                <div class="col-xs-6 col-md-3">
+                                    <div class="actions">
+                                        <div (click)="viewProduct(p);">
+                                            <i class="icon-eye"></i>
+                                        </div>
+                                        <div>
+                                            <i class="icon-heart"></i>
+                                        </div>
+                                        <div>
+                                            <i class="icon-add"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row grid" *ngIf="currentLayout=='grid'">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 item" *ngFor="let p of products">
+                <div class="box">
+                    <div class="row">
+                        <div class="col-xs-12 item-img" [ngStyle]="{'background-image': 'url(' + p.imagePath + ')'}">
+                        </div>
+                        <div class="caption col-xs-12">
+                            <div><a style="text-decoration: none;cursor: pointer;" (click)="viewProduct(p);">{{p.title}}</a></div>
+                            <div class="pull-right price">{{p.price | currency}}</div>
+                        </div>
+                        <div class="tags col-xs-12">
+                            <div>
+                                <i class="icon-trophy"></i>
+                                <span>{{p.percentage}}</span>
+                            </div>
+                            <div>
+                                <i class="icon-pin"></i>
+                                <span>{{p.tags}}</span>
+                            </div>
+                            <div>
+                                <i class="icon-star"></i>
+                                <span>{{p.rating}}</span>
+                            </div>
+                            <div>
+                                <i class="icon-shield"></i>
+                                <span>{{p.percentage}}%</span>
+                            </div>
+                            <div>
+                                <i class="icon-epack"></i>
+                                <span>{{p.ePacket ? 'ePack': 'None'}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-template #noItems>
+        <div class="row">
+            <div class="col-xs-12">
+                No products found.
+            </div>
+        </div>
+    </ng-template>
+</div>

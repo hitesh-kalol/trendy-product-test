@@ -1,0 +1,7 @@
+<div class="container">
+    <app-product-list [products]="products | async" (productClicked)="onProductClicked($event)" *ngIf="!(error$ | async); else error"></app-product-list>
+</div>
+
+<ng-template #error>
+    <h4>{{(error$ | async)?.message}}</h4>
+</ng-template>
